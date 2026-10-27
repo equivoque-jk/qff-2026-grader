@@ -13,6 +13,7 @@ htmlcov/
 # Local answers and validation data
 tests/*
 !tests/test_batch_archives.py
+!tests/test_notebook_download.py
 validation/
 local_runs/
 backups/

@@ -135,7 +135,9 @@ def _offer_download(archive):
             from IPython import get_ipython
             from IPython.display import FileLink, display
             if get_ipython() is not None:
-                display(FileLink(os.path.relpath(archive, Path.cwd()), result_html_prefix="제출 ZIP 다운로드: "))
+                link = FileLink(os.path.relpath(archive, Path.cwd()), result_html_prefix="제출 ZIP 다운로드: ")
+                link.html_link_str = "<a href='%s' download>%s</a>"
+                display(link)
                 return "file_link"
         except ImportError:
             pass

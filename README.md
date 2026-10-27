@@ -1,17 +1,17 @@
-# QFF 2026 로컬 자동채점 — 패키지 2.0.2
+# QFF 2026 로컬 자동채점 — 패키지 2.0.3
 
 QFF 2026 Q-LINK 문제지의 회로와 수치 답안을 채점하는 공개 Python 패키지입니다. 참가자는 Colab에서 답안을 채점하고 제출 ZIP을 만들며, 운영진은 같은 패키지로 제출 데이터를 다시 채점합니다. 기본 100점과 선택 심화 20점을 별도로 표시합니다.
 
-현재 패키지는 **2.0.2**입니다. 문제지 ver3도 같은 2.0.2을 사용합니다. 이 저장소에는 채점기 소스와 반환 계약·배점·운영 안내를 공개합니다. 참가자용 문제지는 운영진이 별도로 배포합니다.
+현재 패키지는 **2.0.3**입니다. 문제지 ver3도 같은 2.0.3을 사용합니다. 이 저장소에는 채점기 소스와 반환 계약·배점·운영 안내를 공개합니다. 참가자용 문제지는 운영진이 별도로 배포합니다.
 
 ## 설치
 
-[Release v2.0.2](https://github.com/equivoque-jk/qff-2026-grader/releases/tag/v2.0.2)에서 wheel과 소스 배포 파일을 제공합니다. 2.0.2에서는 손상된 ZIP의 압축 해제 오류가 일괄 채점을 중단하던 문제를 수정했습니다. 해당 제출은 입력 오류로 기록하고 다음 제출을 계속 채점합니다. 배점과 답안 판정 기준은 동일합니다.
+[Release v2.0.3](https://github.com/equivoque-jk/qff-2026-grader/releases/tag/v2.0.3)에서 wheel과 소스 배포 파일을 제공합니다. 2.0.3에서는 JupyterLab에서 제출 ZIP 링크를 누르면 텍스트 편집기로 열려 UTF-8 오류가 나던 문제를 수정했습니다. 실행 후 표시되는 링크는 브라우저에 ZIP 다운로드를 요청합니다. Colab의 자동 다운로드와 ZIP 생성 방식은 그대로입니다. 배점과 답안 판정 기준은 동일합니다.
 
 운영진 재채점이나 일반 Python 환경에서는 다음 명령으로 설치합니다. 버전이 고정된 wheel URL을 사용합니다. 배포 파일의 SHA-256은 같은 Release의 `SHA256SUMS.txt`에서 확인할 수 있으며, 참가자용 문제지의 설치 셀에는 wheel 해시도 고정합니다.
 
 ```sh
-python -m pip install "https://github.com/equivoque-jk/qff-2026-grader/releases/download/v2.0.2/qff_local_grader-2.0.2-py3-none-any.whl"
+python -m pip install "https://github.com/equivoque-jk/qff-2026-grader/releases/download/v2.0.3/qff_local_grader-2.0.3-py3-none-any.whl"
 qff-grade --version
 qff-grade-batch --version
 ```
@@ -19,10 +19,10 @@ qff-grade-batch --version
 문제지의 회로 그림·시뮬레이션 도구까지 설치하려면 `notebook` 추가 의존성을 사용합니다.
 
 ```sh
-python -m pip install "qff-local-grader[notebook] @ https://github.com/equivoque-jk/qff-2026-grader/releases/download/v2.0.2/qff_local_grader-2.0.2-py3-none-any.whl"
+python -m pip install "qff-local-grader[notebook] @ https://github.com/equivoque-jk/qff-2026-grader/releases/download/v2.0.3/qff_local_grader-2.0.3-py3-none-any.whl"
 ```
 
-Python 3.10–3.13을 대상으로 하며 로컬 권장 버전은 Python 3.12입니다. Qiskit 2.3.1, NumPy 2.2.6, psutil 7.2.2를 고정합니다. `notebook`에는 Aer 0.17.2, Matplotlib 3.10.8, pylatexenc 2.10, IPython 7.34 이상, nbformat 5 이상을 포함합니다. 기존 2.0.1의 전체 실행은 macOS Python 3.12.14와 Colab Python 3.13.16에서 확인했습니다. 2.0.2의 별도 검증 범위는 Release 설명에 기록합니다.
+Python 3.10–3.13을 대상으로 하며 로컬 권장 버전은 Python 3.12입니다. Qiskit 2.3.1, NumPy 2.2.6, psutil 7.2.2를 고정합니다. `notebook`에는 Aer 0.17.2, Matplotlib 3.10.8, pylatexenc 2.10, IPython 7.34 이상, nbformat 5 이상을 포함합니다. 기존 2.0.1의 전체 실행은 macOS Python 3.12.14와 Colab Python 3.13.16에서 확인했습니다. 2.0.3의 별도 검증 범위는 Release 설명에 기록합니다.
 
 최초 설치에는 인터넷이 필요하며, 설치 후 채점 계산에는 외부 서버나 계정·API 키가 필요하지 않습니다. Colab에서는 배포받은 노트북의 준비 A 안내를 따릅니다. 이미 불러온 수치 패키지를 교체해 재시작 안내가 나오면 **런타임 → 세션 다시 시작** 후 준비 A를 다시 실행합니다.
 
@@ -65,4 +65,4 @@ qff-grade-batch received --output grading_results
 
 채점 기준과 구현은 공개되어 있습니다. 운영진 재채점기는 참가자의 Python 소스나 노트북을 실행하지 않고 구조화된 QPY 회로와 JSON 수치 데이터를 검증합니다. 반환값 채점만으로 풀이 과정이나 하드코딩 여부까지 확인할 수 없으므로 작성 노트북도 함께 보관합니다.
 
-이 저장소에는 참조 답안, 개인 제출 파일, 검증 실행 기록을 포함하지 않습니다. 공개 소스의 `qff_grader` 파일은 Release 2.0.2의 실행 코드와 같습니다.
+이 저장소에는 참조 답안, 개인 제출 파일, 검증 실행 기록을 포함하지 않습니다. 공개 소스의 `qff_grader` 파일은 Release 2.0.3의 실행 코드와 같습니다.
