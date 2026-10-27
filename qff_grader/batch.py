@@ -11,6 +11,7 @@ import stat
 import sys
 from uuid import uuid4
 import zipfile
+import zlib
 
 from . import __version__
 from .cli import _positive_timeout, run_isolated, worker_failure
@@ -144,7 +145,8 @@ def regrade_directory(source, output, *, timeout=LIMITS.worker_wall_seconds):
             if claimed_hash is not None and claimed_hash != digest:
                 warning = (warning + " / " if warning else "") + "manifest의 답안 해시가 실제 파일과 다릅니다."
             bundle = parse_json(raw)
-        except (OSError, ValueError, RuntimeError, zipfile.BadZipFile, NotImplementedError) as exc:
+        except (OSError, ValueError, RuntimeError, zipfile.BadZipFile, NotImplementedError,
+                EOFError, zlib.error) as exc:
             result = {"grader_version": f"qff-grader@{__version__}", "status": "invalid", "passed": False,
                       "score": None, "feedback_code": "RECEIVED_FILE_INVALID", "message": str(exc)[:500],
                       "exercises": {}}

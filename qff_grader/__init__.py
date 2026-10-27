@@ -1,5 +1,5 @@
 """Local automatic grading for QFF 2026 Q-LINK."""
-__version__ = "2.0.1"
+__version__ = "2.0.2"
 
 def __getattr__(name):
     if name in {"finalize_submission", "check_runtime", "reset_submission_state", "RuntimeSetupError"}:

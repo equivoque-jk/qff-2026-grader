@@ -11,7 +11,8 @@ dist/
 htmlcov/
 
 # Local answers and validation data
-tests/
+tests/*
+!tests/test_batch_archives.py
 validation/
 local_runs/
 backups/

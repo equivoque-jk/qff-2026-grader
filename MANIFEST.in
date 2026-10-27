@@ -3,6 +3,7 @@ include pyproject.toml
 recursive-include qff_grader *.py *.json
 recursive-include docs *.md
 recursive-exclude tests *
+include tests/test_batch_archives.py
 recursive-exclude tools *
 recursive-exclude build *
 recursive-exclude .venv *
