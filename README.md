@@ -2,7 +2,7 @@
 
 **Qiskit Fall Fest · QUICK · 고려대학교**
 
-Q-LINK 문제지의 회로와 수치 답안을 채점하는 Python 패키지입니다. 참가자는 노트북에서 점수를 확인하고 제출 ZIP을 만들며, 운영진은 같은 패키지로 제출 데이터를 재채점합니다. 기본 문항은 **100점**, 선택 심화는 **추가 20점**입니다.
+Q-LINK 문제지 v4의 회로와 수치 답안을 채점하는 Python 패키지입니다. 참가자는 노트북에서 점수를 확인하고 제출 ZIP을 만들며, 운영진은 같은 패키지로 제출 데이터를 재채점합니다. 기본 문항은 **100점**, 선택 심화는 **추가 20점**입니다.
 
 **[참가자용 문제지](https://github.com/equivoque-jk/qff-2026-Challenge-Quiz)** · [Google Colab에서 열기](https://colab.research.google.com/github/equivoque-jk/qff-2026-Challenge-Quiz/blob/main/QFF_Challenge_Colab.ipynb) · [Grader 2.0.4 다운로드](https://github.com/equivoque-jk/qff-2026-grader/releases/tag/v2.0.4)
 
@@ -22,12 +22,12 @@ Q-LINK 문제지의 회로와 수치 답안을 채점하는 Python 패키지입�
 | 실행 환경 | 제출 ZIP 저장 방법 |
 |---|---|
 | Google Colab | 마지막 셀이 브라우저에 자동 다운로드를 요청합니다. |
-| Jupyter | 마지막 셀의 **제출 ZIP 다운로드** 링크를 누르세요. |
+| Jupyter | 새로 실행한 마지막 셀의 **제출 ZIP 다운로드** 링크를 누르세요. |
 | VS Code | 마지막 셀에 표시된 경로에 ZIP이 로컬 파일로 저장됩니다. |
 
-ZIP에는 `submission.json`, `result.json`, `result.csv`, `manifest.json`이 들어 있습니다. 작성한 노트북은 ZIP에 포함되지 않으므로 **제출 ZIP과 작성한 `.ipynb`를 함께 제출**하세요. 다시 채점했다면 마지막 출력의 실행 ID와 제출 ZIP이 일치하는지 확인하세요.
+ZIP에는 `submission.json`, `result.json`, `result.csv`, `manifest.json`이 들어 있습니다. 작성한 노트북은 ZIP에 포함되지 않으므로 **제출 ZIP과 작성한 `.ipynb`를 함께 제출**하세요. Colab에서는 런타임을 종료하기 전에 두 파일을 내려받으세요. 다시 채점했다면 마지막 출력의 실행 ID와 제출 ZIP이 일치하는지 확인하세요.
 
-**제출처·마감 시각·제출 단위·파일명 규칙·문의 채널은 행사 공지에 따릅니다.** 채점과 파일 저장만으로 제출이 접수되지는 않습니다.
+**제출처·마감 시각·제출 단위(개인/팀)·파일명 규칙·문의 채널은 행사 공지에 따릅니다.** 채점과 파일 저장만으로 제출이 접수되지는 않습니다.
 
 ## 실행 환경
 
@@ -53,7 +53,7 @@ qff-grade-batch --version
 qff-grade submission.json --output result.json --csv result.csv
 ```
 
-여러 제출 ZIP 또는 JSON을 `received` 폴더에 모아 일괄 재채점할 수 있습니다. 결과 폴더는 입력 폴더 밖으로 지정하세요.
+여러 제출 ZIP 또는 JSON을 `received` 폴더에 모아 일괄 재채점할 수 있습니다. 결과 폴더는 입력 폴더 밖으로 지정하세요. 단일 ZIP도 이 명령으로 처리할 수 있습니다.
 
 ```sh
 qff-grade-batch received --output grading_results
