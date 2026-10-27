@@ -1,0 +1,31 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+venv/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local answers and validation data
+tests/
+validation/
+local_runs/
+backups/
+qff_submissions/
+received/
+grading_results/
+regraded/
+*.ipynb
+*.zip
+*.whl
+*.tar.gz
+
+# Local settings and credentials
+.env
+.env.*
+*.sqlite
+*.sqlite3

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "id": "qff-2026",
+  "revision": "2026.10.13",
+  "notebook_version": "2026.10",
+  "contract": "qff_local_2026_v1",
+  "checker_revision": "1.0.0",
+  "exercises": [
+    {
+      "id": "1-1",
+      "title": "비트 반전과 Z 고유값",
+      "part": "1",
+      "optional": false
+    },
+    {
+      "id": "1-2",
+      "title": "중첩과 유한 shots",
+      "part": "1",
+      "optional": false
+    },
+    {
+      "id": "1-3",
+      "title": "H²와 측정 분포",
+      "part": "1",
+      "optional": false
+    },
+    {
+      "id": "1-4",
+      "title": "상대 위상을 판별하는 측정",
+      "part": "1",
+      "optional": false
+    },
+    {
+      "id": "1-5",
+      "title": "Bell 상태와 상관관계",
+      "part": "1",
+      "optional": false
+    },
+    {
+      "id": "1-6",
+      "title": "GHZ와 혼합 상태",
+      "part": "1",
+      "optional": false
+    },
+    {
+      "id": "2-1",
+      "title": "보정표 진단",
+      "part": "2",
+      "optional": false
+    },
+    {
+      "id": "2-2",
+      "title": "한 큐비트 양자 전송",
+      "part": "2",
+      "optional": false
+    },
+    {
+      "id": "2-3",
+      "title": "전송 검증과 통신",
+      "part": "2",
+      "optional": false
+    },
+    {
+      "id": "2-4",
+      "title": "Graph 자원과 decoder",
+      "part": "2",
+      "optional": false
+    },
+    {
+      "id": "3-1",
+      "title": "고전 전략 탐색",
+      "part": "3",
+      "optional": false
+    },
+    {
+      "id": "3-2",
+      "title": "GHZ 게임 전략",
+      "part": "3",
+      "optional": false
+    },
+    {
+      "id": "3-3",
+      "title": "Mermin 값과 승률",
+      "part": "3",
+      "optional": false
+    },
+    {
+      "id": "3-4",
+      "title": "양자·혼합·고전 자원 비교",
+      "part": "3",
+      "optional": false
+    },
+    {
+      "id": "2-5",
+      "title": "두 큐비트 양자 전송",
+      "part": "2",
+      "optional": true
+    },
+    {
+      "id": "3-5",
+      "title": "Z 오류와 양자 우위 경계",
+      "part": "3",
+      "optional": true
+    }
+  ]
+}

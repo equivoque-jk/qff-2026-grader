@@ -1,0 +1,814 @@
+{
+  "version": "qff-local-2026.1",
+  "max_basic": 100,
+  "max_bonus": 20,
+  "max_total": 120,
+  "exercises": {
+    "1-1": {
+      "title": "기준 상태 점검 — X와 Z 기댓값",
+      "part": "1",
+      "kind": "basic",
+      "max_score": 3,
+      "groups": [
+        {
+          "id": "circuit",
+          "title": "X 한 번으로 |1⟩ 준비",
+          "points": 3,
+          "checks": [
+            "circuit.initial_zero_to_one",
+            "circuit.required_gates"
+          ]
+        }
+      ]
+    },
+    "1-2": {
+      "title": "기준 상태 점검 — H와 측정 통계",
+      "part": "1",
+      "kind": "basic",
+      "max_score": 3,
+      "groups": [
+        {
+          "id": "circuit",
+          "title": "H 한 번으로 |+⟩ 준비",
+          "points": 3,
+          "checks": [
+            "circuit.initial_zero_to_plus",
+            "circuit.required_gates"
+          ]
+        }
+      ]
+    },
+    "1-3": {
+      "title": "기준 상태 점검 — H 두 번",
+      "part": "1",
+      "kind": "basic",
+      "max_score": 4,
+      "groups": [
+        {
+          "id": "initial_0",
+          "title": "초기 0에 H 두 번 적용",
+          "points": 1,
+          "checks": [
+            "circuit.initial.0",
+            "circuit.required_gates.0"
+          ]
+        },
+        {
+          "id": "initial_1",
+          "title": "초기 1에 H 두 번 적용",
+          "points": 1,
+          "checks": [
+            "circuit.initial.1",
+            "circuit.required_gates.1"
+          ]
+        },
+        {
+          "id": "initial_+",
+          "title": "초기 +에 H 두 번 적용",
+          "points": 1,
+          "checks": [
+            "circuit.initial.+",
+            "circuit.required_gates.+"
+          ]
+        },
+        {
+          "id": "initial_-",
+          "title": "초기 -에 H 두 번 적용",
+          "points": 1,
+          "checks": [
+            "circuit.initial.-",
+            "circuit.required_gates.-"
+          ]
+        }
+      ]
+    },
+    "1-4": {
+      "title": "측정 basis로 상태 구별하기",
+      "part": "1",
+      "kind": "basic",
+      "max_score": 5,
+      "groups": [
+        {
+          "id": "basis",
+          "title": "공통 국소 측정으로 +와 − 구별",
+          "points": 5,
+          "checks": [
+            "circuit.discriminate_plus_minus"
+          ]
+        }
+      ]
+    },
+    "1-5": {
+      "title": "전송 자원 준비 — 네 Bell 상태",
+      "part": "1",
+      "kind": "basic",
+      "max_score": 7,
+      "groups": [
+        {
+          "id": "prepare_Phi+",
+          "title": "Phi+ 준비",
+          "points": 1.75,
+          "checks": [
+            "circuit.target.Phi+"
+          ]
+        },
+        {
+          "id": "prepare_Phi-",
+          "title": "Phi- 준비",
+          "points": 1.75,
+          "checks": [
+            "circuit.target.Phi-"
+          ]
+        },
+        {
+          "id": "prepare_Psi+",
+          "title": "Psi+ 준비",
+          "points": 1.75,
+          "checks": [
+            "circuit.target.Psi+"
+          ]
+        },
+        {
+          "id": "prepare_Psi-",
+          "title": "Psi- 준비",
+          "points": 1.75,
+          "checks": [
+            "circuit.target.Psi-"
+          ]
+        }
+      ]
+    },
+    "1-6": {
+      "title": "공유 자원 검수 — 같은 기록을 남기는 두 장치",
+      "part": "1",
+      "kind": "basic",
+      "max_score": 8,
+      "groups": [
+        {
+          "id": "ghz",
+          "title": "GHZ+ 준비",
+          "points": 3,
+          "checks": [
+            "circuit.ghz"
+          ]
+        },
+        {
+          "id": "coin",
+          "title": "기록계를 버린 동전 혼합 상태",
+          "points": 3,
+          "checks": [
+            "circuit.coin_reduced_state"
+          ]
+        },
+        {
+          "id": "basis",
+          "title": "공통 국소 측정의 판별 능력",
+          "points": 2,
+          "checks": [
+            "circuit.local_basis_distinguishes"
+          ]
+        }
+      ]
+    },
+    "2-1": {
+      "title": "오류 재현과 진단",
+      "part": "2",
+      "kind": "basic",
+      "max_score": 6,
+      "groups": [
+        {
+          "id": "failed_inputs",
+          "title": "결함이 드러나는 입력 목록",
+          "points": 2,
+          "checks": [
+            "output.failed_inputs"
+          ]
+        },
+        {
+          "id": "masked_inputs",
+          "title": "결함이 가려지는 입력 목록",
+          "points": 2,
+          "checks": [
+            "output.masked_inputs"
+          ]
+        },
+        {
+          "id": "plus_branch_00",
+          "title": "+ 입력에서 분기 00의 fidelity",
+          "points": 0.5,
+          "checks": [
+            "output.plus_branch.00"
+          ]
+        },
+        {
+          "id": "plus_branch_01",
+          "title": "+ 입력에서 분기 01의 fidelity",
+          "points": 0.5,
+          "checks": [
+            "output.plus_branch.01"
+          ]
+        },
+        {
+          "id": "plus_branch_10",
+          "title": "+ 입력에서 분기 10의 fidelity",
+          "points": 0.5,
+          "checks": [
+            "output.plus_branch.10"
+          ]
+        },
+        {
+          "id": "plus_branch_11",
+          "title": "+ 입력에서 분기 11의 fidelity",
+          "points": 0.5,
+          "checks": [
+            "output.plus_branch.11"
+          ]
+        }
+      ]
+    },
+    "2-2": {
+      "title": "전송 회로 복구",
+      "part": "2",
+      "kind": "basic",
+      "max_score": 18,
+      "groups": [
+        {
+          "id": "resource",
+          "title": "지정된 Phi+ 공유 자원",
+          "points": 2,
+          "checks": [
+            "circuit.shared_phi_plus"
+          ]
+        },
+        {
+          "id": "branch_00",
+          "title": "분기 00의 모든 입력 전송",
+          "points": 4,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.00"
+          ]
+        },
+        {
+          "id": "branch_01",
+          "title": "분기 01의 모든 입력 전송",
+          "points": 4,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.01"
+          ]
+        },
+        {
+          "id": "branch_10",
+          "title": "분기 10의 모든 입력 전송",
+          "points": 4,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.10"
+          ]
+        },
+        {
+          "id": "branch_11",
+          "title": "분기 11의 모든 입력 전송",
+          "points": 4,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.11"
+          ]
+        }
+      ]
+    },
+    "2-3": {
+      "title": "전송 검증의 의미",
+      "part": "2",
+      "kind": "basic",
+      "max_score": 7,
+      "groups": [
+        {
+          "id": "mean",
+          "title": "전송 검증의 평균 fidelity",
+          "points": 2,
+          "checks": [
+            "output.mean_fidelity"
+          ]
+        },
+        {
+          "id": "minimum",
+          "title": "전송 검증의 최소 fidelity",
+          "points": 2,
+          "checks": [
+            "output.min_fidelity"
+          ]
+        },
+        {
+          "id": "bob_state",
+          "title": "고전 결과 수신 전 Bob의 평균 밀도행렬",
+          "points": 3,
+          "checks": [
+            "output.bob_average_density"
+          ]
+        }
+      ]
+    },
+    "2-4": {
+      "title": "교체 자원에 맞춰 장치 조정",
+      "part": "2",
+      "kind": "basic",
+      "max_score": 9,
+      "groups": [
+        {
+          "id": "plus_resource",
+          "title": "B=+에서 Bell pair를 만드는 회로",
+          "points": 3,
+          "checks": [
+            "circuit.bell_from_b_plus"
+          ]
+        },
+        {
+          "id": "branch_00",
+          "title": "Graph 자원의 분기 00 전송",
+          "points": 1.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.00"
+          ]
+        },
+        {
+          "id": "branch_01",
+          "title": "Graph 자원의 분기 01 전송",
+          "points": 1.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.01"
+          ]
+        },
+        {
+          "id": "branch_10",
+          "title": "Graph 자원의 분기 10 전송",
+          "points": 1.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.10"
+          ]
+        },
+        {
+          "id": "branch_11",
+          "title": "Graph 자원의 분기 11 전송",
+          "points": 1.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.11"
+          ]
+        }
+      ]
+    },
+    "3-1": {
+      "title": "고전 전략의 한계",
+      "part": "3",
+      "kind": "basic",
+      "max_score": 7,
+      "groups": [
+        {
+          "id": "maximum",
+          "title": "탐색의 최대 승률",
+          "points": 2,
+          "checks": [
+            "search.maximum_rate"
+          ]
+        },
+        {
+          "id": "strategy",
+          "title": "실제로 최적인 반환 전략",
+          "points": 3,
+          "checks": [
+            "search.strategy_is_optimal"
+          ]
+        },
+        {
+          "id": "consistency",
+          "title": "승률과 반환 전략의 일치",
+          "points": 2,
+          "checks": [
+            "search.claim_matches_strategy"
+          ]
+        }
+      ]
+    },
+    "3-2": {
+      "title": "GHZ 측정 전략",
+      "part": "3",
+      "kind": "basic",
+      "max_score": 10,
+      "groups": [
+        {
+          "id": "resource",
+          "title": "GHZ+ 게임 자원",
+          "points": 2,
+          "checks": [
+            "circuit.ghz_resource"
+          ]
+        },
+        {
+          "id": "input_000",
+          "title": "입력 000에서 목표 상관관계",
+          "points": 2,
+          "checks": [
+            "circuit.game.E000"
+          ]
+        },
+        {
+          "id": "input_011",
+          "title": "입력 011에서 목표 상관관계",
+          "points": 2,
+          "checks": [
+            "circuit.game.E011"
+          ]
+        },
+        {
+          "id": "input_101",
+          "title": "입력 101에서 목표 상관관계",
+          "points": 2,
+          "checks": [
+            "circuit.game.E101"
+          ]
+        },
+        {
+          "id": "input_110",
+          "title": "입력 110에서 목표 상관관계",
+          "points": 2,
+          "checks": [
+            "circuit.game.E110"
+          ]
+        }
+      ]
+    },
+    "3-3": {
+      "title": "승률과 Mermin 값",
+      "part": "3",
+      "kind": "basic",
+      "max_score": 7,
+      "groups": [
+        {
+          "id": "correlator_000",
+          "title": "입력 000의 correlator",
+          "points": 0.5,
+          "checks": [
+            "output.E.000"
+          ]
+        },
+        {
+          "id": "correlator_011",
+          "title": "입력 011의 correlator",
+          "points": 0.5,
+          "checks": [
+            "output.E.011"
+          ]
+        },
+        {
+          "id": "correlator_101",
+          "title": "입력 101의 correlator",
+          "points": 0.5,
+          "checks": [
+            "output.E.101"
+          ]
+        },
+        {
+          "id": "correlator_110",
+          "title": "입력 110의 correlator",
+          "points": 0.5,
+          "checks": [
+            "output.E.110"
+          ]
+        },
+        {
+          "id": "win_000",
+          "title": "입력 000의 승률",
+          "points": 0.5,
+          "checks": [
+            "output.win.000"
+          ]
+        },
+        {
+          "id": "win_011",
+          "title": "입력 011의 승률",
+          "points": 0.5,
+          "checks": [
+            "output.win.011"
+          ]
+        },
+        {
+          "id": "win_101",
+          "title": "입력 101의 승률",
+          "points": 0.5,
+          "checks": [
+            "output.win.101"
+          ]
+        },
+        {
+          "id": "win_110",
+          "title": "입력 110의 승률",
+          "points": 0.5,
+          "checks": [
+            "output.win.110"
+          ]
+        },
+        {
+          "id": "mermin",
+          "title": "Mermin 값",
+          "points": 1.5,
+          "checks": [
+            "output.M"
+          ]
+        },
+        {
+          "id": "win_rate",
+          "title": "평균 승률",
+          "points": 1.5,
+          "checks": [
+            "output.p_win"
+          ]
+        }
+      ]
+    },
+    "3-4": {
+      "title": "공유 자원 교체",
+      "part": "3",
+      "kind": "basic",
+      "max_score": 6,
+      "groups": [
+        {
+          "id": "ghz_M",
+          "title": "같은 X/Y 전략의 GHZ M",
+          "points": 1,
+          "checks": [
+            "output.ghz_M"
+          ]
+        },
+        {
+          "id": "ghz_win",
+          "title": "같은 X/Y 전략의 GHZ 승률",
+          "points": 1,
+          "checks": [
+            "output.ghz_p_win"
+          ]
+        },
+        {
+          "id": "coin_M",
+          "title": "같은 X/Y 전략의 동전 M",
+          "points": 1,
+          "checks": [
+            "output.coin_M"
+          ]
+        },
+        {
+          "id": "coin_win",
+          "title": "같은 X/Y 전략의 동전 승률",
+          "points": 1,
+          "checks": [
+            "output.coin_p_win"
+          ]
+        },
+        {
+          "id": "classical_best",
+          "title": "일반 고전 출력의 최적 승률",
+          "points": 2,
+          "checks": [
+            "output.classical_best"
+          ]
+        }
+      ]
+    },
+    "2-5": {
+      "title": "선택 — 두 qubit의 상관관계까지 전송",
+      "part": "2",
+      "kind": "bonus",
+      "max_score": 12,
+      "groups": [
+        {
+          "id": "resource",
+          "title": "고정 배치의 Bell pair 두 쌍",
+          "points": 4,
+          "checks": [
+            "circuit.two_bell_pairs"
+          ]
+        },
+        {
+          "id": "branch_0000",
+          "title": "분기 0000의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0000"
+          ]
+        },
+        {
+          "id": "branch_0001",
+          "title": "분기 0001의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0001"
+          ]
+        },
+        {
+          "id": "branch_0010",
+          "title": "분기 0010의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0010"
+          ]
+        },
+        {
+          "id": "branch_0011",
+          "title": "분기 0011의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0011"
+          ]
+        },
+        {
+          "id": "branch_0100",
+          "title": "분기 0100의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0100"
+          ]
+        },
+        {
+          "id": "branch_0101",
+          "title": "분기 0101의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0101"
+          ]
+        },
+        {
+          "id": "branch_0110",
+          "title": "분기 0110의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0110"
+          ]
+        },
+        {
+          "id": "branch_0111",
+          "title": "분기 0111의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.0111"
+          ]
+        },
+        {
+          "id": "branch_1000",
+          "title": "분기 1000의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1000"
+          ]
+        },
+        {
+          "id": "branch_1001",
+          "title": "분기 1001의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1001"
+          ]
+        },
+        {
+          "id": "branch_1010",
+          "title": "분기 1010의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1010"
+          ]
+        },
+        {
+          "id": "branch_1011",
+          "title": "분기 1011의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1011"
+          ]
+        },
+        {
+          "id": "branch_1100",
+          "title": "분기 1100의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1100"
+          ]
+        },
+        {
+          "id": "branch_1101",
+          "title": "분기 1101의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1101"
+          ]
+        },
+        {
+          "id": "branch_1110",
+          "title": "분기 1110의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1110"
+          ]
+        },
+        {
+          "id": "branch_1111",
+          "title": "분기 1111의 전체 상태 전송",
+          "points": 0.5,
+          "checks": [
+            "circuit.channel_complete",
+            "circuit.branch.1111"
+          ]
+        }
+      ]
+    },
+    "3-5": {
+      "title": "선택 — 위상 오류와 고전 기준",
+      "part": "3",
+      "kind": "bonus",
+      "max_score": 8,
+      "groups": [
+        {
+          "id": "value_0_M",
+          "title": "p=0의 M",
+          "points": 1,
+          "checks": [
+            "noise.0.M"
+          ]
+        },
+        {
+          "id": "value_0_p_win",
+          "title": "p=0의 승률",
+          "points": 1,
+          "checks": [
+            "noise.0.p_win"
+          ]
+        },
+        {
+          "id": "value_0.1_M",
+          "title": "p=0.1의 M",
+          "points": 1,
+          "checks": [
+            "noise.0.1.M"
+          ]
+        },
+        {
+          "id": "value_0.1_p_win",
+          "title": "p=0.1의 승률",
+          "points": 1,
+          "checks": [
+            "noise.0.1.p_win"
+          ]
+        },
+        {
+          "id": "value_0.25_M",
+          "title": "p=0.25의 M",
+          "points": 1,
+          "checks": [
+            "noise.0.25.M"
+          ]
+        },
+        {
+          "id": "value_0.25_p_win",
+          "title": "p=0.25의 승률",
+          "points": 1,
+          "checks": [
+            "noise.0.25.p_win"
+          ]
+        },
+        {
+          "id": "value_0.5_M",
+          "title": "p=0.5의 M",
+          "points": 1,
+          "checks": [
+            "noise.0.5.M"
+          ]
+        },
+        {
+          "id": "value_0.5_p_win",
+          "title": "p=0.5의 승률",
+          "points": 1,
+          "checks": [
+            "noise.0.5.p_win"
+          ]
+        }
+      ]
+    }
+  }
+}
